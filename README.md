@@ -83,6 +83,9 @@ Time overhead 1.08 1.04
 Makespan 120
 ```
 
+## Assignment Details
+Refer to the assignment_spec/ folder in this repository for the original project specification PDFs.
+
 ## License
 
 This project is released under the [MIT License](LICENSE).
