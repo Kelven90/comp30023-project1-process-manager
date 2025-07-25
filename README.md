@@ -4,13 +4,27 @@ This repository contains my implementation of a simulated process manager, devel
 
 ## Project Overview
 
-This project simulates:
-- **Shortest Job First (SJF)** and **Round Robin (RR)** CPU scheduling.
-- **Best-Fit** and **infinite** memory allocation strategies.
-- Process lifecycle transitions (READY → RUNNING → FINISHED).
-- Optional control of real subprocesses using `fork`, `exec`, signals, and pipes.
+This project simulates a simplified operating system process manager entirely in C. It models how a CPU schedules multiple processes and how memory is allocated to them in a controlled environment. Key functionalities include:
 
-The simulation models a CPU environment where processes arrive, are scheduled for execution, and consume simulated memory. The system outputs execution logs and performance statistics.
+- **Process scheduling** using two classic algorithms:
+  - **Shortest Job First (SJF):** Non-preemptive — each process runs until completion.
+  - **Round Robin (RR):** Preemptive — processes take turns in fixed time slices (quantums).
+  
+- **Memory allocation** with two modes:
+  - **Infinite memory mode:** Assumes unlimited memory; processes are always admitted.
+  - **Best-Fit allocation:** Simulates realistic memory constraints and fragmentation. Processes must fit into the smallest available memory block.
+
+- **Lifecycle simulation** of each process through the states: `NEW → READY → RUNNING → FINISHED`.
+
+- **Timing and performance tracking**, including:
+  - When processes start, stop, and complete.
+  - Time statistics such as turnaround time, time overhead, and makespan.
+
+- **Text-based logging output** formatted to mimic a real OS scheduler's execution trace.
+
+Optional support for launching and managing real subprocesses (disabled by default in this repo).
+
+This implementation includes all supporting data structures and logic such as process queues, memory maps, scheduling decisions, and real-time simulation updates without relying on any external libraries.
 
 ## Features Implemented
 
